@@ -1,0 +1,32 @@
+Console.Write("Enter choice ['A' for Area, 'P' for Perimeter, 'X' to Exit]: ");
+char choice = char.ToUpper(Console.ReadKey().KeyChar);
+Console.WriteLine(); // Print a new line after key input
+
+if (choice == 'X')
+{
+    Console.WriteLine("Exiting the application.");
+    return;
+}
+
+if (choice == 'A' || choice == 'P')
+{
+    Console.Write("Enter the radius of the circle: ");
+    double radius = Convert.ToDouble(Console.ReadLine());
+
+    switch (choice)
+    {
+        case 'A':
+            double area = Math.PI * Math.Pow(radius, 2);
+            Console.WriteLine($"Area of the circle: {area:F2}");
+            break;
+
+        case 'P':
+            double perimeter = 2 * Math.PI * radius;
+            Console.WriteLine($"Perimeter of the circle: {perimeter:F2}");
+            break;
+    }
+}
+else
+{
+    Console.WriteLine("Invalid option selected.");
+}
